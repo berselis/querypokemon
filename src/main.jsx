@@ -8,13 +8,12 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { Provider } from 'react-redux';
 
 const root = document.getElementById('root');
-
-
-
 ReactDOM.createRoot(root).render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+    
+        <App />
+    
     </Provider>
   </React.StrictMode>
 )

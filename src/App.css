@@ -1,3 +1,4 @@
+/*#region BASIC STYLE*/
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -42,5 +43,170 @@ html {
 .bdevelopment-logo {
   max-width: 96px;
 }
+/*#endregion BASIC STYLE*/
 
 
+
+
+
+
+.main {
+  height: 600px;
+  max-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main>.form-trainer {
+  width: 360px;
+}
+
+.title-intro {
+  font-size: 96px;
+  font-weight: 700;
+  font-family: fantasy;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.title-intro>span {
+  background: url(/src/assets/Media/imgs/texture.png);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all .5s ease;
+
+}
+
+.title-intro>span:hover {
+  transform: translateY(-2px);
+  transition: all .5s ease;
+}
+
+
+/*#region ICON GO OUT*/
+.go-out{
+  transform: translateY(-25px);
+}
+
+.go-out>a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:200px;
+  background: linear-gradient(180deg, #242424, #161616);
+  padding: 10px;
+  border-radius: 25px;
+  position:relative;
+  cursor: pointer;
+  gap:5px;
+  overflow: hidden;
+  border: solid 1px #000000;
+}
+.go-out>a>strong{
+  color:#ffffff;
+}
+
+.go-out>a>label{
+ position: absolute;
+ color: salmon;
+ cursor:pointer;
+ background:linear-gradient(180deg, #ffffff, #fcfcfc);
+ font-weight: 600;
+ font-size: 22px;
+ width: 100%;
+ height: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-radius: 25px;
+ opacity: 0;
+ transform:translateY(-15px);
+ transition: all .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.go-out>a:hover>label{
+  opacity: 1;
+  transform:translateY(0px);
+  transition: all .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+ }
+
+.go-out>a>img{
+  width:26px;
+}
+
+/*#region ICON GO OUT*/
+
+
+
+
+
+
+
+
+
+/*#region FOOTER STYLE*/
+
+.footer-pokedex {
+  position: absolute;
+  bottom: 0;
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.footer-pokedex>.footer-inner-up {
+  background: linear-gradient(180deg, #242424, #161616);
+  height: 100px;
+  width: 100%;
+}
+
+.footer-pokedex>.footer-inner-down {
+  background: linear-gradient(180deg, #ff0000, #b30000);
+  height: 100px;
+  width: 100%;
+
+}
+
+.footer-pokedex>.footer-inner-middle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.footer-inner-middle>.pokeball-layout {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokeball-layout>img,
+.pokeball-layout>.gow-icon {
+  position: absolute;
+}
+
+.pokeball-layout>.gow-icon {
+  border-radius: 50%;
+  animation: glow-buttom alternate infinite 1s ease;
+  transform: translateY(2px);
+}
+
+@keyframes glow-buttom {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+.pokeball-layout>.gow-icon {
+  background: linear-gradient(180deg, #ff0000, #e70606);
+  width: 24px;
+  height: 24px;
+
+}
+/*#endregion FOOTER STYLE*/

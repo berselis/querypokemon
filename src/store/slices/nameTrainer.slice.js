@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 
 
-export const nameTrainer = createSlice({
+export const nameTrainerSlice = createSlice({
     name:'nameTrainer',
     initialState: '',
     reducers:{
@@ -9,6 +9,6 @@ export const nameTrainer = createSlice({
     }
 })
 
-export const { setNametrainer} = nameTrainer.actions;
+export const { setNametrainer} = nameTrainerSlice.actions;
 
-export default nameTrainer.reducer
+export default nameTrainerSlice.reducer

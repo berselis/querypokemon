@@ -1,24 +1,22 @@
 import reactLogo from './assets/react.svg';
 import bdevelopmentLogo from './assets/Media/imgs/logoWhite.png';
+import pokeBall from './assets/Media/imgs/pokeball.png';
 import bootstrapLogo from './assets/bootstrap-logo-shadow.png';
 import './App.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { HashRouter, Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
+import ProtectedRoutes from './components/ProtectedRoutes';
+import Pokedex from './components/Pokedex';
+import PokemonDetails from './components/PokemonDetails';
+import { HashRouter } from 'react-router-dom';
 
 
 
 
 
 function App() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(e);
-
-  }
-
-
 
   return (
     <>
@@ -32,17 +30,36 @@ function App() {
           <img src={bdevelopmentLogo} alt="BJMM" className='bdevelopment-logo' />
         </div>
       </nav>
+
       <div className='container'>
         <div className='row'>
 
           <HashRouter>
             <Routes>
-              <Route path='/' element={<Home handleSubmit={handleSubmit} />} />
-
-
+              <Route path='/' element={<Home />} />
+              <Route element={<ProtectedRoutes />}>
+                <Route path='/pokedex' element={<Pokedex />} />
+                <Route path='/pokemex/:id' element={<PokemonDetails />} />
+              </Route>
             </Routes>
           </HashRouter>
         </div>
+      </div>
+
+      <div className='footer-pokedex'>
+
+        <div className='footer-inner-up'> </div>
+        <div className='footer-inner-middle'>
+          <div className='pokeball-layout'>
+            <img src={pokeBall} />
+            <span className='gow-icon'></span>
+          </div>
+
+        </div>
+
+
+        <div className='footer-inner-down'> </div>
+
       </div>
     </>
   )
