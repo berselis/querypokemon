@@ -1,33 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import reactLogo from './assets/react.svg';
+import bdevelopmentLogo from './assets/Media/imgs/logoWhite.png';
+import bootstrapLogo from './assets/bootstrap-logo-shadow.png';
+import './App.css';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { HashRouter, Routes, Route, Link } from 'react-router-dom';
+import Home from './components/Home';
+
+
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e);
+
+  }
+
+
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <>
+      <nav className="navbar navbar-dark bg-dark">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">
+            <img src={reactLogo} alt="" className="d-inline-block align-text-top react-logo" />
+            <img src={bootstrapLogo} alt="" className="d-inline-block align-text-top bootstrap-logo" />
+            <h3><strong>Entregrable 5</strong> - Berselis J. Mendoza M.</h3>
+          </a>
+          <img src={bdevelopmentLogo} alt="BJMM" className='bdevelopment-logo' />
+        </div>
+      </nav>
+      <div className='container'>
+        <div className='row'>
+
+          <HashRouter>
+            <Routes>
+              <Route path='/' element={<Home handleSubmit={handleSubmit} />} />
+
+
+            </Routes>
+          </HashRouter>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    </>
   )
 }
 
