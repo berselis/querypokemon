@@ -1,14 +1,13 @@
-import {createSlice} from '@reduxjs/toolkit';
-
+import { createSlice } from '@reduxjs/toolkit';
 
 export const nameTrainerSlice = createSlice({
-    name:'nameTrainer',
+    name: 'nameTrainer',
     initialState: '',
-    reducers:{
+    reducers: {
         setNametrainer: (state, action) => action.payload
+       
     }
 })
 
-export const { setNametrainer} = nameTrainerSlice.actions;
-
+export const { setNametrainer } = nameTrainerSlice.actions;
 export default nameTrainerSlice.reducer

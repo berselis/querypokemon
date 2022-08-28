@@ -1,15 +1,18 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
 import useGetAllType from '../hooks/useGetAllType';
 import PokeFinder from './pokedexcomp/PokeFinder';
 import PokePaginations from './pokedexcomp/PokePaginations';
 import Pokebody from './pokedexcomp/Pokebody';
+import { setOffsetTriner } from '../store/slices/offSetTrainer.slice';
 
 
 
 const Pokedex = () => {
-  let offset = Math.floor(Math.random() * 1185);
+  let offset = useSelector(state => state.offsetTrainer);
+  const dispachOffset = useDispatch();
 
   const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=200`);
   const [pokemons, setPokemons] = useState([]);
@@ -32,6 +35,7 @@ const Pokedex = () => {
 
   const handleRealod = () => {
     offset = Math.floor(Math.random() * 1185);
+    dispachOffset(setOffsetTriner(offset))
     setUrl(`https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=200`);
   }
   const handleType = (e) => {

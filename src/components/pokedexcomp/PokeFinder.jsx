@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PokeFinder = ({handleSubmit, types, handleReaload, handleType}) => {
+const PokeFinder = ({ handleSubmit, types, handleReaload, handleType }) => {
     return (
         <section className='layout-pokedex'>
             <div className='form-finder'>
@@ -9,7 +9,9 @@ const PokeFinder = ({handleSubmit, types, handleReaload, handleType}) => {
                     <div className="hstack gap-1 col-md-12">
                         <input id='pokename' type="text" className='form-control form-control-lg text-danger' placeholder='pokemon name or #id' />
                         <div className="vr"></div>
-                        <button type='submit' className='btn btn-danger btn-lg'>Search</button>
+                        <button type='submit' className='btn btn-danger btn-lg'>
+                            <i className="bi bi-search"></i>
+                            Search</button>
                         <div className="vr"></div>
                         <select onChange={handleType} className="form-select form-select-lg text-danger">
                             <option value={''}>-Pokemon type-</option>
@@ -20,7 +22,11 @@ const PokeFinder = ({handleSubmit, types, handleReaload, handleType}) => {
                             }
                         </select>
                         <div className="vr"></div>
-                        <button onClick={handleReaload} type='buttom' className='btn btn-info btn-lg'>Reaload</button>
+                        <button onClick={handleReaload} type='buttom' className='btn btn-info btn-lg'>
+                            <i className="bi bi-arrow-repeat"></i>
+                            Reaload
+
+                        </button>
                     </div>
                 </form>
             </div>

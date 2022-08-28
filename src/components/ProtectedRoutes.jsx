@@ -1,18 +1,20 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { Navigate, Outlet } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, Outlet, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { setNametrainer } from '../store/slices/nameTrainer.slice';
+import { setOffsetTriner } from '../store/slices/offSetTrainer.slice';
 import LogOut from './LogOut';
 
 const ProtectedRoutes = () => {
   const nameTrainer = useSelector(state => state.nameTrainer);
-  const dispach = useDispatch();
+
+  const dispachName = useDispatch();
+  const dispachOffset = useDispatch();
   const navigate = useNavigate();
 
   const handledGoOut = () => {
-    dispach(setNametrainer(''));
+    dispachName(setNametrainer(''));
+    dispachOffset(setOffsetTriner(0));
     navigate('/');
 
   }
