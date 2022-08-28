@@ -18,7 +18,7 @@ const Home = () => {
         e.target.name.value = '';
     }
     return (
-        <div className='main'>
+        <section className='main'>
 
             <div className='form-trainer'>
                 <div className='title-intro'>
@@ -38,7 +38,7 @@ const Home = () => {
                     <button type='submit' className='btn btn-danger btn-lg'>Start</button>
                 </form>
             </div>
-        </div>
+        </section>
     )
 }
 

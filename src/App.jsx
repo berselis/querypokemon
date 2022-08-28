@@ -31,7 +31,7 @@ function App() {
         </div>
       </nav>
 
-      <div className='container'>
+      <main className='container'>
         <div className='row'>
 
           <HashRouter>
@@ -44,9 +44,9 @@ function App() {
             </Routes>
           </HashRouter>
         </div>
-      </div>
+      </main>
 
-      <div className='footer-pokedex'>
+      <footer className='footer-pokedex'>
 
         <div className='footer-inner-up'> </div>
         <div className='footer-inner-middle'>
@@ -60,7 +60,7 @@ function App() {
 
         <div className='footer-inner-down'> </div>
 
-      </div>
+      </footer>
     </>
   )
 }
