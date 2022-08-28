@@ -37,7 +37,7 @@ const Pokecard = ({ name, url }) => {
                     </div>
 
                     <div className='content-info'>
-                        <h4 className='name' style={{ color: secondColor }}>{name}</h4>
+                        <h5 className='name' style={{ color: secondColor }}>{name}</h5>
                         <h6>{type}</h6>
                         <small><strong>Type</strong></small>
                         <hr />

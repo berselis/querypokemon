@@ -293,6 +293,10 @@ html::-webkit-scrollbar-track {
 /*#endregion CARD*/
 
 /*#region POKEMON DETAIL*/
+.pokemon-tittle>img{
+  width: 200px;
+}
+
 .pokemon-detail{
   position: relative;
   min-height: 569px;
@@ -310,6 +314,7 @@ html::-webkit-scrollbar-track {
   text-align: center;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  min-height: 48px;
 }
 
 .pokemon-detail>.pokemon-layout {
