@@ -7,7 +7,7 @@ const PokeFinder = ({handleSubmit, types, handleReaload, handleType}) => {
                 <h4><i><strong>Welcome!!</strong></i><span>, here you can find your favorite pokemon!!</span></h4>
                 <form onSubmit={handleSubmit} className='input-group'>
                     <div className="hstack gap-1 col-md-12">
-                        <input id='pokename' type="text" className='form-control form-control-lg text-danger' placeholder='pokemon name' />
+                        <input id='pokename' type="text" className='form-control form-control-lg text-danger' placeholder='pokemon name or #id' />
                         <div className="vr"></div>
                         <button type='submit' className='btn btn-danger btn-lg'>Search</button>
                         <div className="vr"></div>

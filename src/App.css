@@ -203,7 +203,7 @@ html::-webkit-scrollbar-track{
   margin: 20px 0 20px !important;
   flex-wrap: wrap;
   gap:10px;
-  min-height: 400px;;
+  min-height: 400px;
 }
 
 .poke-card{
@@ -213,12 +213,20 @@ html::-webkit-scrollbar-track{
   padding:10px;
   cursor: pointer;
   transition: all .3s ease;
+  position: relative;
 }
 .poke-card:hover{
   box-shadow: 0 0 20px #242424;
-  transform: translateY(-3px);
-  
+  transform: translateY(-3px); 
 }
+.poke-card>.body-card-event{
+  position: absolute;
+  width: 230px;
+  height: 380px;
+  border-radius: 15px;
+  z-index: 1;
+}
+
 
 .poke-card>.inner-card{
   border-radius: 15px;
@@ -273,6 +281,14 @@ html::-webkit-scrollbar-track{
 
 
 /*#endregion CARD*/
+
+/*#region POKEMON DETAIL*/
+.pokemon-detail{
+  min-height: 569px;
+}
+
+/*#endregion*/
+
 
 /*#region FOOTER STYLE*/
 .footer-pokedex {

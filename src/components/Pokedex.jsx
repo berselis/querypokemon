@@ -9,9 +9,9 @@ import Pokebody from './pokedexcomp/Pokebody';
 
 
 const Pokedex = () => {
-  let offset = Math.floor(Math.random() * 1200);
+  let offset = Math.floor(Math.random() * 1185);
 
-  const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=100`);
+  const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=200`);
   const [pokemons, setPokemons] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -31,8 +31,8 @@ const Pokedex = () => {
   }
 
   const handleRealod = () => {
-    offset = Math.floor(Math.random() * 1200);
-    setUrl(`https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=100`);
+    offset = Math.floor(Math.random() * 1185);
+    setUrl(`https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=200`);
   }
   const handleType = (e) => {
     const option = e.target.options[e.target.options.selectedIndex];

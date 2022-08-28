@@ -2,15 +2,24 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import colorType from '../../json/colorsTypes.json';
+import {useNavigate} from 'react-router-dom';
 
 const Pokecard = ({ name, url }) => {
     const [pokemon, setPokemon] = useState();
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         axios.get(url)
             .then(res => setPokemon(res.data))
             .catch(msj => console.log(msj))
-    }, [])
+    }, []);
+
+    const handlerClick = (e) =>{
+        const id = e.target.getAttribute('data-id');
+        
+        navigate(`/pokedex/${id}`);
+    }
 
 
     if (pokemon) {
@@ -21,8 +30,8 @@ const Pokecard = ({ name, url }) => {
         }
         return (
             <article className='poke-card' style={{ background: `linear-gradient(180deg, ${firstColor}, ${secondColor})` }}>
+                <div onClick={handlerClick} data-id={pokemon.id} className='body-card-event'></div>
                 <div className='inner-card'>
-
                     <div className='content-image' style={{ background: `linear-gradient(180deg, ${secondColor}, ${firstColor})` }}>
                         <img src={pokemon.sprites.other['official-artwork']['front_default']} />
                     </div>
