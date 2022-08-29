@@ -21,6 +21,7 @@ html {
 
 html::-webkit-scrollbar {
   width: 5px;
+  scroll-behavior: smooth;
 }
 
 html::-webkit-scrollbar-thumb {
@@ -84,6 +85,10 @@ a {
   justify-content: space-evenly;
 }
 
+.title-intro>span>img {
+  width: 90px;
+}
+
 .title-intro>span {
   background: url(/src/assets/Media/imgs/texture.png);
   background-repeat: repeat;
@@ -91,7 +96,7 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all .5s ease;
-
+  margin: 0 5px;
 }
 
 .title-intro>span:hover {
@@ -212,6 +217,7 @@ a {
   flex-wrap: wrap;
   gap: 10px;
   min-height: 400px;
+  transition: all .3s ease;
 }
 
 .poke-card {
@@ -320,10 +326,11 @@ a {
 .pokemon-detail {
   position: relative;
   min-height: 569px;
-  padding: 25px !important;
   background-image: url('/src//assets/Media/imgs/openpokeball.png');
-  background-position: top left;
-  background-size: cover;
+  background-position: center left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
 }
 
 .pokemon-detail>.name-pokemon {
@@ -340,6 +347,11 @@ a {
   border-bottom-right-radius: 15px;
   min-height: 90%;
   background-color: #ffffffc7;
+
+}
+
+.pokemon-layout>.row {
+  padding: 0 15px;
 }
 
 .btn-back {
@@ -353,6 +365,21 @@ a {
 .pokemon-header {
   display: flex;
   align-items: center;
+}
+
+.pokemon-data {
+  position: relative;
+}
+
+.pokemon-data>.variant-sprites {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  transform: translateY(-20px);
+}
+
+.pokemon-data>.variant-sprites>img {
+  max-width: 96px;
 }
 
 .pokemon-status {
@@ -380,6 +407,7 @@ a {
   color: #343434;
   margin: 0 !important;
   z-index: 1;
+  justify-content: center;
 }
 
 .number-position {
@@ -394,12 +422,11 @@ a {
 .pokemon-status>.weight,
 .pokemon-status>.height {
   position: relative;
-  width: 84px;
-  height: 84px;
-
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   padding: 5px;
-  background: linear-gradient(180deg, #fcfcfc, #ffffff);
+  background: linear-gradient(180deg, #fcfcfcb5, #ffffffc4);
   transition: all .3s ease;
   cursor: pointer;
 }
@@ -473,6 +500,29 @@ a {
   margin-top: 10px;
 }
 
+.layout-stats {
+  position: relative;
+}
+
+.layout-stats>img {
+  position: absolute;
+  top: 0;
+
+}
+
+.layout-stats>.abilities-img {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+
+}
+
+.layout-stats>.moves-img {
+  right: 0;
+}
+
+
+
+
 .layout-stats>.stats {
   display: flex;
   align-items: center;
@@ -503,24 +553,91 @@ a {
   margin: 0;
   padding: 0;
   display: flex;
-  gap:10px;
+  gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
-  
 }
 
 .layout-stats>.abilities>li {
-  padding: 8px;
+  padding: 0 8px;
   border: solid 1px #343434;
   border-radius: 25px;
   font-weight: bold;
-  cursor:pointer;
-  transition:all .3s ease;
+  cursor: pointer;
+  transition: all .3s ease;
 }
+
 .layout-stats>.abilities>li:hover {
-  transform:translateY(-3px);
+  transform: translateY(-3px);
   box-shadow: 0px 5px 2px 0px #343434;
-  transition:all .3s ease;
+  transition: all .3s ease;
+}
+
+.layout-stats>.body-moves {
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.layout-stats>.body-moves::-webkit-scrollbar {
+  width: 10px;
+}
+
+.layout-stats>.body-moves::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, #f1f1f1, #fcfcfc);
+  border-radius: 25px;
+}
+
+.layout-stats>.body-moves::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #848484, #929292);
+  border-radius: 25px;
+  transition: all .3s ease;
+}
+
+.layout-stats>.body-moves::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #343434, #424242);
+  border-radius: 25px;
+  transition: all .3s ease;
+}
+
+.layout-stats>.body-moves>.moves {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.layout-stats>.body-moves>.moves>li {
+  font-weight: 600;
+  padding: 0 3px;
+  transition: all .3s ease;
+}
+
+.layout-stats>.body-moves>.moves>li:hover {
+  color: #343434 !important;
+  box-shadow: 0 1px 4px -2px #343434;
+  transition: all .3s ease;
+}
+
+.variant {
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.variant>h2 {
+  text-align: center;
+}
+
+.variant>.body-variant {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.variant>.body-variant>img {
+  max-width: 226px;
 }
 
 /*#endregion*/

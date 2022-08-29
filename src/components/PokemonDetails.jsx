@@ -25,7 +25,6 @@ const PokemonDetails = () => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}/`;
     axios.get(url)
       .then(res => {
-        console.log(res.data)
         setPokemon(res.data);
       }).catch(msj => console.log(msj));
 
@@ -66,7 +65,17 @@ const PokemonDetails = () => {
               <div className='col-md-6'>
                 <div className='pokemon-header'>
                   <div className='pokemon-data'>
+
                     <img src={pokemon.sprites.other['official-artwork']['front_default']} />
+
+                    <div className='variant-sprites'>
+                      <img src={pokemon.sprites.versions['generation-v']['black-white'].animated['back_default']} />
+                      <img src={pokemon.sprites.versions['generation-v']['black-white'].animated['front_default']} />
+                      <img src={pokemon.sprites.versions['generation-v']['black-white'].animated['back_shiny']} />
+                      <img src={pokemon.sprites.versions['generation-v']['black-white'].animated['front_shiny']} />
+
+                    </div>
+
                     <div className='pokemon-status'>
                       <hr style={{ color: secondColor }} />
 
@@ -107,8 +116,8 @@ const PokemonDetails = () => {
 
               <div className='col-md-6'>
                 <div className='layout-stats'>
-                  <h2 className='title-stats'>Stats</h2>
                   <hr />
+                  <h2 className='title-stats'>Stats</h2>
                   <div className='stats'>
                     <div>
                       <small>HP</small>
@@ -156,27 +165,47 @@ const PokemonDetails = () => {
                 </div>
 
                 <div className='layout-stats'>
-                  <h2 className='title-stats'>Abilities</h2>
                   <hr />
+                  <h2 className='title-stats'>Abilities</h2>
+                  <img className='img-fluid abilities-img' src={pokemon.sprites.versions['generation-vi']['x-y']['front_default']} />
+
                   <ul className='abilities'>
                     {
-                      pokemon.abilities.map(ab => <li key={ab.ability.name}>{ab.ability.name}</li>)
+                      pokemon.abilities.map(ab => <li key={ab.ability.name} style={{ border: `1px solid ${secondColor}` }}>{ab.ability.name}</li>)
                     }
-
-
-
                   </ul>
-
                 </div>
 
+                <div className='layout-stats'>
+                  <hr />
+                  <h2 className='title-stats'>Moves</h2>
+                  <img className='img-fluid moves-img' src={pokemon.sprites.versions['generation-vi']['x-y']['front_shiny']} />
 
+                  <div className='body-moves'>
+                    <ul className='moves'>
+                      {
+                        pokemon.moves.map(mo => <li key={mo.move.name} style={{ color: secondColor }}>{mo.move.name}</li>)
+                      }
+
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+
+              <div className='col-md-12 variant' style={{ boxShadow: `inset 0px -51px 16px -20px ${secondColor}` }}>
+                <hr />
+                <h2>Variant</h2>
+                <div className='body-variant'>
+                  <img className='img-fluid' src={pokemon.sprites.other['dream_world']['front_default']} />
+                  <img className='img-fluid' src={pokemon.sprites.other.home['front_default']} />
+                  <img className='img-fluid' src={pokemon.sprites.other.home['front_shiny']} />
+                </div>
               </div>
 
 
             </div>
-
           </div>
-
         </article>
       </>
     )
